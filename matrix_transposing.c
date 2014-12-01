@@ -4,15 +4,19 @@
 
 void display_2d_square_array(int ar[][MAX])
 {
+	int i, j;
+	
 	// Loops through the array
 	// In order to display
 	// the value of the array
 	for(i = 0; i < MAX; i++) {
 		for(j = 0; j < MAX; j++) 
-			printf("%d ", x[j][i]);
+			printf("%d\t", ar[j][i]);
 			
 		printf("\n");
 	}
+	
+	printf("\n");
 }
 
 int main()
