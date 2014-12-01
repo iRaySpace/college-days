@@ -2,6 +2,19 @@
 
 #define MAX 5
 
+void display_2d_square_array(int ar[][MAX])
+{
+	// Loops through the array
+	// In order to display
+	// the value of the array
+	for(i = 0; i < MAX; i++) {
+		for(j = 0; j < MAX; j++) 
+			printf("%d ", x[j][i]);
+			
+		printf("\n");
+	}
+}
+
 int main()
 {
 	int i, j, k,
@@ -12,6 +25,9 @@ int main()
 	for(i = 0, k = 1; i < MAX; i++)
 		for(j = 0; j < MAX; j++)
 			x[j][i] = k++;
+	
+	printf("Original Matrix \n");
+	display_2d_square_array(x); // Calling the function to print the array
 	
 	// Navigates through the array
 	// However, there is a twist
@@ -27,24 +43,15 @@ int main()
 			
 			// SWAP the values from the
 			// right side to the left side
-			// by using a temp variable
-			// to hold the values from the right side
-			// and used to assigned it for the left side
-			// after assigning the value of the right side
+			// by using a temp variable.
 			int temp = x[j][i];
 			x[j][i] = x[i][j];
 			x[i][j] = temp;
 		}
 	
-	// Loops through the array
-	// Displays the array
-	for(i = 0; i < MAX; i++) {
-		for(j = 0; j < MAX; j++) 
-			printf("%d ", x[j][i]);
-			
-		printf("\n");
-	}
-	
+	printf("Transpose of the Matrix \n");
+	display_2d_square_array(x); // Calling the function to print the array
+
 	getch();
 	return 0;
 }
